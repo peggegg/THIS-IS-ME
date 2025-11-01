@@ -1,0 +1,185 @@
+nav {
+    display: flex;
+
+    justify-content: space-around;
+    background-color: black;
+    padding: 50px;
+
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    font-size: 50px;
+    font-family: poppins;
+
+}
+
+#nav-link {
+    list-style-type: none;
+
+    display: flex;
+    gap: 250px;
+    padding: 0px;
+    margin: 0px;
+}
+
+nav img {
+    width: 50%
+}
+
+h1 {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 200px
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+img {
+    border: 25px solid #555;
+}
+
+p {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+li {
+    font-size: 300%;
+    font-style: italic;
+
+}
+
+/* Horizontal Fun List */
+/* --- Fun List: Playful, Large Font --- */
+.fun-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    list-style: none;
+    padding: 30px;
+    margin: 0;
+}
+
+.fun-list li {
+    font-family: 'Fredoka One', cursive;
+    font-size: 3rem;
+    color: black;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: default;
+}
+
+.fun-list li:hover {
+    transform: scale(1.15);
+    color: black;
+}
+
+/* --- Masonry Photo Collage --- */
+/* --- Masonry Photo Collage with Category Overlays --- */
+.photo-collage {
+    column-count: 4;
+    column-gap: 15px;
+    max-width: 1300px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.photo {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+    break-inside: avoid;
+}
+
+.photo img {
+    width: 100%;
+    border-radius: 15px;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Category Overlay Banner --- */
+.photo::after {
+    content: attr(data-category);
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(26, 188, 156, 0.9);
+    color: #fff;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.2rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease, bottom 0.3s ease;
+}
+
+.photo:hover::after {
+    opacity: 1;
+    bottom: 20px;
+}
+
+/* --- Optional: Custom Colors Per Category --- */
+.photo[data-category="Family"]::after {
+    background: rgba(255, 99, 132, 0.9);
+}
+
+.photo[data-category="Pickleball"]::after {
+    background: rgba(255, 159, 64, 0.9);
+}
+
+.photo[data-category="Bowling"]::after {
+    background: rgba(255, 205, 86, 0.9);
+}
+
+.photo[data-category="Hiking"]::after {
+    background: rgba(75, 192, 192, 0.9);
+}
+
+.photo[data-category="Friends"]::after {
+    background: rgba(153, 102, 255, 0.9);
+}
+
+.photo[data-category="Adventure"]::after {
+    background: rgba(54, 162, 235, 0.9);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1000px) {
+    .photo-collage {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 700px) {
+    .photo-collage {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-collage {
+        column-count: 1;
+    }
+}
